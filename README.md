@@ -47,8 +47,6 @@ published port; it also asserts the `curl` package used by the self-curl probe.
 
 ## Related
 
-- This candy has no `skill:` entity of its own — it is a harness fixture with no
-  user-facing procedure. The gap is recorded on
-  [opencharly/opencharly#291](https://github.com/opencharly/opencharly/issues/291).
-- `/charly-infrastructure:supervisord` — the process-manager dependency.
+- `/charly-infrastructure:supervisord` — the process-manager dependency this
+  fixture's nginx service runs under.
 - [`opencharly/charly`](https://github.com/opencharly/charly) — the charly CLI and image builder
