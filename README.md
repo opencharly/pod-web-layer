@@ -47,6 +47,5 @@ published port; it also asserts the `curl` package used by the self-curl probe.
 
 ## Related
 
-- `/charly-infrastructure:supervisord` — the process-manager dependency this
-  fixture's nginx service runs under.
+- The `supervisord` process manager — this fixture's nginx service runs under it.
 - [`opencharly/charly`](https://github.com/opencharly/charly) — the charly CLI and image builder
