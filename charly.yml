@@ -8,7 +8,7 @@ web-layer:
             probe. Combined with a fedora base + supervisord this satisfies
             every scenario in the network-and-http recipe.
         require:
-            - '@github.com/opencharly/layer-supervisord:v2026.235.2056'
+            - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
         distro:
             fedora:
                 package:
