@@ -5,8 +5,15 @@ web-layer:
             Installs nginx, writes /srv/fixture/index.html containing the
             predetermined web content marker, ships an nginx.conf that listens
             on 8080 and serves /srv/fixture/, plus curl for the self-curl
-            probe. Combined with a fedora base + supervisord this satisfies
+            probe. Combined with a base image + supervisord this satisfies
             every scenario in the network-and-http recipe.
+
+            Cross-distro: Fedora and Arch/CachyOS. The nginx.conf is
+            self-contained (its own pid, log and temp paths under /tmp), so it
+            works on both, and the service's absolute `/usr/sbin/nginx` resolves
+            on both too — Arch's usr-merge makes /usr/sbin a symlink to
+            /usr/bin. Only the package names differ (iproute vs iproute2;
+            procps-ng is the same name on both).
         require:
             - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
         distro:
@@ -15,6 +22,12 @@ web-layer:
                     - nginx
                     - curl
                     - iproute
+                    - procps-ng
+            arch:
+                package:
+                    - nginx
+                    - curl
+                    - iproute2
                     - procps-ng
         port:
             - 8080
